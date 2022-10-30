@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Player from "./Player";
+import "./styles.css";
+import { useQuery, gql } from "@apollo/client";
+
+const name = gql`
+  {
+    players {
+      name
+      clan
+      country
+      playerData {
+        playerId
+        clanId
+      }
+      playerStats {
+        ovr
+        acc
+        imp
+        ast
+        ent
+        utl
+        exp
+      }
+    }
+  }
+`;
 
 function App() {
+  const { data, loading, error } = useQuery(name);
+  // if (loading) return "Loading...";
+  if (error) return <pre>{error.message}</pre>;
+  console.log(data);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Player />
+
+      {/* <Player />
+      <Player />
+      <Player /> */}
     </div>
   );
 }
