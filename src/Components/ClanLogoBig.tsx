@@ -3,12 +3,12 @@ import { Player } from "../../typings";
 
 type Props = { player: Player };
 
-const PlayerPicture = ({ player }: Props) => {
+const PlayerClanLogoBig = ({ player }: Props) => {
   const [data, setData] = useState<any>([]);
   let [error, setError] = useState(null);
 
   useEffect(() => {
-    const API = `http://office.skybox.gg:3000/resources/players/${player.playerData?.playerId}`;
+    const API = `http://office.skybox.gg:3000/resources/clans/${player.playerData.clanId}`;
     const fetchData = () => {
       fetch(API)
         .then((res) => {
@@ -30,15 +30,11 @@ const PlayerPicture = ({ player }: Props) => {
   }, []);
 
   return (
-    <div>
-      {!error && (
-        <img
-          className="playerPicture"
-          src={"data:image/png;base64," + data.base64_image}
-        />
-      )}
-    </div>
+    <img
+      className="clanLogoBig"
+      src={`data:${data.mime_type};base64,` + data.base64_image}
+    />
   );
 };
 
-export default PlayerPicture;
+export default PlayerClanLogoBig;
