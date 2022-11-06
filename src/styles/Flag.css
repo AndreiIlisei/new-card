@@ -1,0 +1,7 @@
+.flag {
+    width: 24px;
+    height: 16px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }

@@ -1,0 +1,20 @@
+/* Mobile First */
+.clanLogoBig {
+  position: absolute;
+  width: 152.06px;
+  height: 200px;
+  top: 1%;
+  right: 69%;
+  opacity: 17%;
+  z-index: 1;
+}
+
+/* Big Screen Responsive */
+@media only screen and (min-width: 1450px) {
+  .clanLogoBig {
+    width: 212.06px;
+    height: 257.19px;
+    top: -5%;
+    right: 69%;
+  }
+}

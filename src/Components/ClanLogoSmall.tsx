@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Player } from "../../typings";
+import "../styles/ClanLogoSmall.css"
+
 
 type Props = { player: Player };
 

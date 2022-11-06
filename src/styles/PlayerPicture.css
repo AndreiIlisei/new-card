@@ -1,0 +1,17 @@
+/* Mobile First */
+.playerPicture {
+  position: absolute;
+  left: -9%;
+  top: 4%;
+}
+
+/* Big Screen Responsive */
+@media only screen and (min-width: 1450px) {
+  .playerPicture {
+    position: absolute;
+    left: -5%;
+    top: 4%;
+    width: 490px;
+    height: 511px;
+  }
+}

@@ -1,8 +1,9 @@
 import { Player } from "../../typings";
-import PlayerClanLogo from "./ClanLogo";
+import PlayerClanLogo from "./ClanLogoSmall";
 import PlayerClanLogoBig from "./ClanLogoBig";
 import PlayerFlags from "./Flag";
 import PlayerPicture from "./PlayerPicture";
+import "../styles/PlayerCard.css";
 
 type Props = {
   playerInfo: Player[];

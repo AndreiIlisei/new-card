@@ -1,0 +1,452 @@
+/* Mobile First Design */
+.gridComponent {
+  margin-top: 35px;
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hexagon {
+  position: relative;
+  height: 600px;
+  width: 339px;
+  background: linear-gradient(19.44deg, #1e40af 0%, #b91c1c 100%);
+}
+
+.hexagon:before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 10px;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  background: #1e40af;
+}
+
+.hexagon,
+.hexagon:before {
+  -webkit-clip-path: polygon(50% 0, 100% 5%, 100% 95%, 50% 100%, 0 95%, 0 5%);
+  clip-path: polygon(50% 0, 100% 5%, 100% 95%, 50% 100%, 0 95%, 0 5%);
+}
+
+.topContainer {
+  position: relative;
+  width: 339px;
+  height: 300px;
+}
+
+.topContainer:before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 10px;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(54.9deg, #1e40af 0%, #b91c1c 100%);
+}
+
+.topContainer,
+.topContainer:before {
+  -webkit-clip-path: polygon(
+    50% 0,
+    100% 10%,
+    100% 100%,
+    50% 100%,
+    0 100%,
+    0 10%
+  );
+  clip-path: polygon(50% 0, 100% 10%, 100% 100%, 50% 100%, 0 100%, 0 10%);
+}
+
+.lights {
+  position: relative;
+  left: -201%;
+  top: -140%;
+}
+
+.flares {
+  position: absolute;
+}
+
+.divider {
+  position: absolute;
+  width: 339px;
+  height: 10px;
+  top: 289.5px;
+  background: linear-gradient(90deg, #583379 2.26%, #802a53 97.75%);
+}
+
+.middleHexagon {
+  position: relative;
+  bottom: 300%;
+  left: 38%;
+  width: 80px;
+  height: 65.74px;
+  background: #eff6ff;
+  z-index: 10;
+}
+
+.middleHexagon:before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    #1e40af;
+  overflow: hidden;
+  content: "";
+}
+
+.middleHexagon,
+.middleHexagon:before {
+  -webkit-clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0 90%, 0 10%);
+  clip-path: polygon(50% 0, 100% 10%, 100% 90%, 50% 100%, 0 90%, 0 10%);
+}
+
+.middleHexagonText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 15%;
+  padding: 4px;
+}
+
+.overallStat {
+  margin: 0;
+  font-family: "Russo One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  color: #eff6ff;
+  mix-blend-mode: normal;
+  text-shadow: 0px 2.22204px 6.66611px rgba(0, 0, 0, 0.4);
+}
+
+.overallText {
+  margin: 0;
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  mix-blend-mode: normal;
+  background: #1e40af;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff99;
+}
+
+.bottomContainer {
+  position: relative;
+  width: 339px;
+  height: 300px;
+}
+
+.bottomContainer:before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 10px;
+  height: calc(100% - 10px);
+  width: calc(100% - 20px);
+  background: linear-gradient(
+    54.9deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border: 1px solid #000000;
+}
+
+.bottomContainer,
+.bottomContainer:before {
+  -webkit-clip-path: polygon(50% 100%, 100% 90%, 100% 0, 50% 0, 0 0, 0 90%);
+  clip-path: polygon(50% 100%, 100% 90%, 100% 0, 50% 0, 0 0, 0 90%);
+}
+
+.lines {
+  position: relative;
+  left: -42%;
+  top: -137%;
+  mix-blend-mode: normal;
+  transform: rotate(1deg);
+}
+
+.playerInfoLeft {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 7%;
+  top: 3%;
+}
+
+.playerName {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0.04em;
+  color: #eff6ff;
+  mix-blend-mode: normal;
+}
+
+.playerClan {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  margin-top: 5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-variation-settings: "slnt" -10;
+  mix-blend-mode: normal;
+  background: #1e40af;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff99;
+}
+
+.playerInfoRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+  position: absolute;
+  right: 7%;
+  top: 3%;
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 30px;
+  position: absolute;
+  width: 320px;
+  height: 160px;
+  left: calc(50% - 320px / 2 - 0.5px);
+  bottom: 73px;
+}
+
+.columnLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 15px;
+  height: 177px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.columnRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 15px;
+  height: 177px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.dividerStats {
+  width: 2px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.2);
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.rowStats {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 0px;
+  gap: 12px;
+  height: 43px;
+}
+
+.statsTextLeft {
+  font-family: "Russo One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  width: 45px;
+  text-align: right;
+  color: #eff6ff;
+  mix-blend-mode: normal;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.statsName {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  mix-blend-mode: normal;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  background: #1e40af;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff99;
+}
+
+.statsTextRight {
+  font-family: "Russo One";
+  font-style: normal;
+  width: 45px;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  text-align: left;
+  color: #eff6ff;
+  mix-blend-mode: normal;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Screen Responsive */
+
+@media (min-width: 800px) {
+  .gridComponent {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+    justify-items: center;
+    gap: 0;
+  }
+
+  .hexagon {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .gridComponent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .gridComponent {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  .hexagon {
+    height: 739px;
+    width: 439px;
+    margin-bottom: 50px;
+  }
+
+  .middleHexagon {
+    bottom: 375%;
+    left: 39%;
+    width: 97px;
+    height: 84.31px;
+  }
+
+  .middleHexagonText {
+    padding: 0px;
+  }
+
+  .overallStat {
+    font-size: 42px;
+  }
+
+  .overallText {
+    font-size: 18px;
+  }
+
+  .topContainer {
+    width: 439px;
+    height: 368px;
+  }
+
+  .lights {
+    left: -143%;
+    top: -129%;
+  }
+
+  .divider {
+    width: 439px;
+    top: 358px;
+  }
+
+  .bottomContainer {
+    width: 439px;
+    height: 368px;
+  }
+
+  .lines {
+    top: -118%;
+    transform: rotate(-357deg);
+  }
+
+  .playerInfoLeft {
+    left: 5%;
+    top: 3%;
+  }
+
+  .playerName {
+    font-size: 28px;
+  }
+
+  .playerClan {
+    font-size: 14px;
+  }
+
+  .statsContainer {
+    gap: 40px;
+    height: 131.33px;
+    width: 439px;
+    left: calc(50% - 457px / 2 - 0.5px);
+    bottom: 139px;
+  }
+
+  .columnLeft {
+    width: 150px;
+  }
+
+  .dividerStats {
+    height: 197.33px;
+  }
+
+  .statsTextLeft {
+    font-size: 40px;
+    width: 90px;
+  }
+
+  .statsTextRight {
+    width: 70px;
+    font-size: 40px;
+  }
+
+  .statsName {
+    font-size: 40px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 2100px) {
+  .gridComponent {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
