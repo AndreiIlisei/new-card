@@ -1,5 +1,6 @@
 import { Player } from "../../typings";
 import PlayerClanLogo from "./ClanLogo";
+import PlayerClanLogoBig from "./ClanLogoBig";
 import PlayerFlags from "./Flag";
 import PlayerPicture from "./PlayerPicture";
 
@@ -8,21 +9,13 @@ type Props = {
 };
 
 const PlayerCard = ({ playerInfo }: Props) => {
-  console.log(playerInfo);
   return (
     <div className="gridComponent">
       {playerInfo?.map((player) => {
         return (
           <div key={player.playerData.playerId} className="hexagon">
             <div className="topContainer">
-              {/* <PlayerClanLogo player={player} /> */}
-
-              <img
-                className="logoVitality"
-                src={"./assets/data/logoVitalityWhite.svg"}
-                alt=""
-              />
-
+              <PlayerClanLogoBig player={player} />
               <img
                 className="flares"
                 src={"./assets/static/flares2.svg"}
@@ -42,7 +35,6 @@ const PlayerCard = ({ playerInfo }: Props) => {
               <div className="middleHexagon">
                 <div className="middleHexagonText">
                   <p className="overallStat">{player.playerStats.ovr}</p>
-                  <div className="tryingSmth"></div>
                   <p className="overallText"> OVR </p>
                 </div>
               </div>
@@ -53,7 +45,7 @@ const PlayerCard = ({ playerInfo }: Props) => {
 
               <div className="playerInfoLeft">
                 <div className="playerName">{player.name}</div>
-                <div className="playerClan">{player.clan}</div>
+                <h1 className="playerClan">{player.clan}</h1>
               </div>
 
               <div className="playerInfoRight">
@@ -63,16 +55,16 @@ const PlayerCard = ({ playerInfo }: Props) => {
 
               <div className="statsContainer">
                 <div className="columnLeft">
-                  <div className="columnLeftStatsFirst">
-                    <p className="statsText">{player.playerStats.acc}</p>
+                  <div className="rowStats">
+                    <p className="statsTextLeft">{player.playerStats.acc}</p>
                     <p className="statsName">ACC</p>
                   </div>
-                  <div className="columnLeftStatsMiddle">
-                    <p className="statsText">{player.playerStats.imp}</p>
+                  <div className="rowStats">
+                    <p className="statsTextLeft">{player.playerStats.imp}</p>
                     <p className="statsName">IMP</p>
                   </div>
-                  <div className="columnLeftStatsLast">
-                    <p className="statsText">{player.playerStats.ast}</p>
+                  <div className="rowStats">
+                    <p className="statsTextLeft">{player.playerStats.ast}</p>
                     <p className="statsName">AST</p>
                   </div>
                 </div>
@@ -80,16 +72,16 @@ const PlayerCard = ({ playerInfo }: Props) => {
                 <div className="dividerStats" />
 
                 <div className="columnRight">
-                  <div className="columnRightStatsFirst">
-                    <p className="statsText">{player.playerStats.ent}</p>
+                  <div className="rowStats">
+                    <p className="statsTextRight">{player.playerStats.ent}</p>
                     <p className="statsName">ENT</p>
                   </div>
-                  <div className="columnRighthStatsMiddle">
-                    <p className="statsText">{player.playerStats.utl}</p>
+                  <div className="rowStats">
+                    <p className="statsTextRight">{player.playerStats.utl}</p>
                     <p className="statsName">UTL</p>
                   </div>
-                  <div className="columnRightStatsLast">
-                    <p className="statsText">{player.playerStats.exp}</p>
+                  <div className="rowStats">
+                    <p className="statsTextRight">{player.playerStats.exp}</p>
                     <p className="statsName">EXP</p>
                   </div>
                 </div>
